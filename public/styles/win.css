@@ -1,0 +1,33 @@
+@font-face {
+  font-family: VAGWorldBold;
+  src: url("../font/VAGWorldBold.ttf");
+}
+
+html, body {
+  text-align: center;
+  font-family: VAGWorldBold;
+  background: #2B344B;
+  color: #fff;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.win {
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.win h1, .win h2 {
+  margin: 0;
+  height: 24px;
+}

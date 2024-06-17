@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Words Game</title>
+    <link rel="icon" sizes="16x16" href="icons/favicon-16.png" type="image/png"/>
+    <link rel="stylesheet" href="styles/main.css" />
+    <link rel="stylesheet" href="styles/button.css" />
+    <link rel="stylesheet" href="styles/popup.css" />
+  </head>
+  <body>
+    <h1 id="current-level"></h1>
+    <div id="letter-container"></div>
+    <div id="output"></div>
+    <div id="letter-control">
+      <div id="circle">
+        <svg id="svg"></svg>
+      </div>
+    </div>
+    <div class="popup" id="popup">
+      <div class="popup-content">
+        <div class="popup-header">
+          <div class="triangle-up-right"></div>
+          Две вкладки с игрой?
+          <div class="triangle-up-left"></div>
+        </div>
+        <div class="popup-body">
+          <p>
+            Похоже, игра открыта в нескольких вкладках браузера. Чтобы
+            продолжить играть в этой вкладке, обновите страницу.
+          </p>
+        </div>
+        <div class="green-button" onclick="closePopup()">Обновить</div>
+      </div>
+    </div>
+    <div class="overlay" id="overlay"></div>
+    <script src="js/text-collector.js"></script>
+    <script src="js/page-check.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/adjust-viewport.js"></script>
+    <script src="js/draw-line.js"></script>
+  </body>
+</html>
