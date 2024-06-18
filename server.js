@@ -1,6 +1,7 @@
 const http = require("http");
 const fs = require("fs");
 const path = require("path");
+const zlib = require("zlib");
 
 const server = http.createServer((req, res) => {
   // Set CORS headers
@@ -20,7 +21,17 @@ const server = http.createServer((req, res) => {
         res.end(JSON.stringify({ error: "Data not found" }));
       } else {
         res.setHeader("Content-Type", "application/json");
-        res.end(data);
+
+        // Enable gzip compression
+        res.setHeader("Content-Encoding", "gzip");
+        zlib.gzip(data, (err, compressedData) => {
+          if (err) {
+            res.statusCode = 500;
+            res.end(JSON.stringify({ error: "Failed to compress data" }));
+          } else {
+            res.end(compressedData);
+          }
+        });
       }
     });
   } else {
