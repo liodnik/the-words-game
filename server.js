@@ -22,6 +22,9 @@ const server = http.createServer((req, res) => {
       } else {
         res.setHeader("Content-Type", "application/json");
 
+        const oneMonth = 30 * 24 * 60 * 60;
+        res.setHeader("Cache-Control", `public, max-age=${oneMonth}`);
+
         // Enable gzip compression
         res.setHeader("Content-Encoding", "gzip");
         zlib.gzip(data, (err, compressedData) => {
@@ -40,7 +43,7 @@ const server = http.createServer((req, res) => {
   }
 });
 
-// Looping level/archive-names
+// Function to determine level/archive-names
 const getNameByLevel = (level) => {
   const names = ["1", "2", "3"];
   const index = (level - 1) % names.length;
