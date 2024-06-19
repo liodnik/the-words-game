@@ -6,3 +6,9 @@ Simple words guessing game. Enjoy it [here](https://words-game-2xg8.onrender.com
 
 > [!NOTE]
 > You can run your own instance locally, just do `node server` from project root dir and change `ENDPOINT_URL` in `public/js/app.js`.
+
+
+### TODO:
+- Do adaptive design;
+- Get rid of magic numbers;
+- Fix endless letter input.
