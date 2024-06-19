@@ -18,6 +18,7 @@ func main() {
 
 func handler(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Access-Control-Allow-Origin", "*")
+	w.Header().Set("Cache-Control", "max-age=86400")
 
 	urlPath := r.URL.Path
 
